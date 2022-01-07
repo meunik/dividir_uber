@@ -18,8 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', [TesteController::class, 'index']);
-Route::get('/uber', [UberController::class, 'index']);
+Route::get('/', [UberController::class, 'index']);
 Route::post('/uber/salvar', [UberController::class, 'salvar']);
 Route::get('/uber/buscar/{data}', [UberController::class, 'buscar']);
 Route::delete('/uber/apagar', [UberController::class, 'apagar']);
