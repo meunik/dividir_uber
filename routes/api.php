@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/', [UberController::class, 'index']);
 Route::post('/uber/salvar', [UberController::class, 'salvar']);
 Route::get('/uber/buscar/{data}', [UberController::class, 'buscar']);
