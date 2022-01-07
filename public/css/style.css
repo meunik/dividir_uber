@@ -1,0 +1,151 @@
+html body {
+    background: transparent;
+}
+
+.page-hero h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: -1px -1px 1px #460000, 2px 2px 1px #ff4965;
+    text-transform: uppercase;
+    color: #bd122d;
+}
+.page-hero p {
+    color: #f1acb7;
+}
+.card {
+    background: transparent !important;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.card-header {
+    background: #0000003d;
+    color: #fff;
+}
+.card-header .prevMonth {
+    cursor: pointer;
+}
+.card-header .nextMonth {
+    cursor: pointer;
+}
+.card-body {
+    background: #4a4a4a87;
+}
+.card-body .days span {
+    background: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+/* .card-body .days span:hover {
+    background: #f7899a;
+} */
+.card-body .dates span {
+    background: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.card-body .dates span.active, .card-body .dates span:hover {
+    background: #ffeef0;
+    color: #000;
+}
+.card-body .dates span.ntMonth {
+    color: #ffffff;
+    background: #787878;
+}
+.card-body .dates span.ntMonth:hover {
+    background: #ffffff;
+    color: #000;
+}
+.card#event .card-header .close {
+    color: #fff;
+    opacity: 1;
+}
+.card#event .card-body .events-today {
+    height: 210px;
+    overflow-x: hidden;
+}
+.card#event .card-body .events-input .data-invalid {
+    border-color: red;
+}
+.card#event .card-body .events-input .error {
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    top: 100%
+}
+
+@media(max-width: 767px) {
+    .pa-sm {
+        position: absolute;
+    }
+    .card-body .days span {
+        height: 38px;
+        width: 38px;
+        line-height: 38px;
+        font-size: .8rem;
+    }
+    .card-body .dates span {
+        height: 38px;
+        width: 38px;
+        line-height: 38px;
+        font-size: .8rem;
+    }
+    .card#event .card-body .events-today {
+        height: 188px;
+    }
+
+    .w-50 {
+        width: 25%!important;
+    }
+}
+/*# sourceMappingURL=style.css.map */
+
+
+.intups {
+    border-radius: 5px;
+    border: 1px;
+    padding: 5px 10px;
+    background: #141821;
+    color: #fff;
+}
+
+.form-control:focus {
+    color: #ffffff;
+    background-color: #141821;
+    border-color: #f5f5f5;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgb(255 255 255 / 25%);
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+.p-0 {
+    padding: 0 !important;
+}
+.m-p-0 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.excecoes {
+    color: #ffffff;
+    background-color: #141821;
+}
+.btn-fechar {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    z-index: 2;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+}
