@@ -165,7 +165,6 @@ function renderCalendar(m, y) {
 }
 renderCalendar(month, year)
 
-
     $(function(){
 
         function showEvent(eventDate){
@@ -201,18 +200,20 @@ renderCalendar(month, year)
         $(document).on('click', '.remove-event', function(){
             let eventId = $(this).data('event-id');
             removeEvent(eventId);
-        })
+        });
 
         $(document).on('click', '.prevMonth', function(){
             year = (month === 0) ? year - 1 : year;
             month = (month === 0) ? 11 : month - 1;
             renderCalendar(month, year);
-        })
+            resultadosMes(month, year)
+        });
         $(document).on('click', '.nextMonth', function(){
             year = (month === 11) ? year + 1 : year;
             month = (month + 1) % 12;
             renderCalendar(month, year);
-        })
+            resultadosMes(month, year)
+        });
 
         $(document).on('click', '.showEvent', function(){
             $('.showEvent').removeClass('active');
@@ -243,11 +244,11 @@ renderCalendar(month, year)
             });
 
             showEvent(eventDate);
-        })
+        });
 
         $(document).on('click', '.hide', function(){
             $('#event').addClass('d-none');
-        })
+        });
 
         $(document).on('click', '#createEvent', function(){
             let events = localStorage.getItem('events');
@@ -261,23 +262,22 @@ renderCalendar(month, year)
             let valid = false;
             $('#eventTxt').removeClass('data-invalid');
             $('.error').remove();
-            if (eventText == ''){
+            if (eventText == '') {
                 $('.events-input').append(`<span class="error">Please enter event</span>`);
                 $('#eventTxt').addClass('data-invalid');
                 $('#eventTxt').trigger('focus');
-            }else if(eventText.length < 3){
+            } else if (eventText.length < 3) {
                 $('#eventTxt').addClass('data-invalid');
                 $('#eventTxt').trigger('focus');
                 $('.events-input').append(`<span class="error">please enter at least three characters</span>`);
-            }else{
+            } else {
                 valid = true;
             }
-            if (valid){
+            if (valid) {
                 let id =1;
                 if (obj.length > 0) {
                     id = Math.max.apply('', obj.map(function (entry) { return parseFloat(entry.id); })) + 1;
-                }
-                else {
+                } else {
                     id = 1;
                 }
                 obj.push({
@@ -291,7 +291,7 @@ renderCalendar(month, year)
                 toastr.success('Exceção registrada com sucesso!')
                 showEvent(eventDate);
             }
-        })
+        });
 
         $(document).on('click', '#salvarValores', function(){
             $('.event-date').val();
@@ -333,7 +333,7 @@ renderCalendar(month, year)
                     // toastr.error(error)
                 }
             });
-        })
+        });
 
         $(document).on('click', '#apagarValores', function(){
             $.ajax({
@@ -349,7 +349,33 @@ renderCalendar(month, year)
                     toastr.error('Falha ao Apagar.');
                 }
             });
-        })
-    })
+        });
+    });
+
+
+function resultadosMes(mes, ano) {
+    mes = String(mes+1);
+    if(mes.length < 2) mes = `0${mes}`
+
+    $.ajax({
+        type: "GET",
+        url: `/uber/mes/${ano}-${mes}`,
+        success: function(data){
+            $('#dias').html(data.dias);
+            $('#total').html('R$ '+data.total);
+            $('#mediaTotal').html('R$ '+data.mediaTotal);
+            $('#porcentagemValeria').html(data.porcentagemValeria+'%');
+            $('#porcentagemMarcos').html(data.porcentagemMarcos+'%');
+            $('#somaValeria').html('R$ '+data.somaValeria);
+            $('#somaMarcos').html('R$ '+data.somaMarcos);
+            $('#mediaValeria').html('R$ '+data.mediaValeria);
+            $('#mediaMarcos').html('R$ '+data.mediaMarcos);
+        },
+        error: function(error) {
+            toastr.error('Falha ao exibir a tabela.');
+        }
+    });
+}
+resultadosMes(month, year)
 
 
