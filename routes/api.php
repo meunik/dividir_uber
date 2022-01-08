@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::get('/', [UberController::class, 'index']);
-// Route::post('/uber/salvar', [UberController::class, 'salvar']);
-// Route::get('/uber/buscar/{data}', [UberController::class, 'buscar']);
-// Route::delete('/uber/apagar', [UberController::class, 'apagar']);
+Route::post('/uber/salvar', [UberController::class, 'salvar']);
+Route::get('/uber/buscar/{data}', [UberController::class, 'buscar']);
+Route::delete('/uber/apagar', [UberController::class, 'apagar']);
 
-// Route::get('/uber/mes/{data}', [UberController::class, 'mes']);
+Route::get('/uber/mes/{data}', [UberController::class, 'mes']);
 
