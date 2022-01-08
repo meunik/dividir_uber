@@ -14,9 +14,9 @@ use App\Http\Controllers\UberController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', [UberController::class, 'index']);
 Route::post('/uber/salvar', [UberController::class, 'salvar']);
