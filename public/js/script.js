@@ -229,7 +229,7 @@ renderCalendar(month, year)
 
             $.ajax({
                 type: "GET",
-                url: `https://dividindo-uber.herokuapp.com/public/uber/buscar/${data}`,
+                url: `https://dividindo-uber.herokuapp.com/public/api/uber/buscar/${data}`,
                 success: function(dados){
                     if (dados) {
                         var valeria = (dados.valeria_valor) ? dados.valeria_valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) : '';
@@ -323,7 +323,7 @@ renderCalendar(month, year)
 
             $.ajax({
                 type: "POST",
-                url: "https://dividindo-uber.herokuapp.com/public/uber/salvar",
+                url: "https://dividindo-uber.herokuapp.com/public/api/uber/salvar",
                 data: controle,
                 success: function(data){
                     toastr.success('Registrado com sucesso!')
@@ -338,7 +338,7 @@ renderCalendar(month, year)
         $(document).on('click', '#apagarValores', function(){
             $.ajax({
                 type: "DELETE",
-                url: "https://dividindo-uber.herokuapp.com/public/uber/apagar",
+                url: "https://dividindo-uber.herokuapp.com/public/api/uber/apagar",
                 data: {data: $('#data').val()},
                 success: function(data){
                     toastr.success('Apagado com sucesso!');
@@ -359,7 +359,7 @@ function resultadosMes(mes, ano) {
 
     $.ajax({
         type: "GET",
-        url: `https://dividindo-uber.herokuapp.com/public/uber/mes/${ano}-${mes}`,
+        url: `https://dividindo-uber.herokuapp.com/public/api/uber/mes/${ano}-${mes}`,
         success: function(data){
             $('#dias').html(data.dias);
             $('#total').html('R$ '+data.total);
