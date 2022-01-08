@@ -19,7 +19,6 @@
         </style>
     </head>
     <body class="container">
-        <div id="app"></div>
 
         <table class="table">
             <thead>
@@ -51,6 +50,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <div id="app"></div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
