@@ -136,6 +136,15 @@ html body {
     margin: 0 !important;
     padding: 0 !important;
 }
+.p-15 {
+    padding: 15px;
+}
+.p-15-25 {
+    padding: 15px 25px;
+}
+
+
+
 
 .excecoes {
     color: #ffffff;
