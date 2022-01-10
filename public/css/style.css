@@ -107,6 +107,11 @@ html body {
         width: 25%!important;
     }
 }
+@media(max-width: 992px) {
+    .p-xl-0 {
+        padding: 0px !important;
+    }
+}
 /*# sourceMappingURL=style.css.map */
 
 

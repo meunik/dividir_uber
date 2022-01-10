@@ -20,13 +20,17 @@
     </head>
     <body class="container">
 
+        <br>
+        <h1>Dividindo o Uber</h1>
+        <br>
+
         <table class="table">
             <thead>
                 <tr>
                     <th class="text-center" scope="col"></th>
                     <th class="text-center" scope="col">Valores</th>
                     <th class="text-center" scope="col">%</th>
-                    <th class="text-center" scope="col">Por/mês</th>
+                    <th class="text-center" scope="col">Média dia</th>
                 </tr>
             </thead>
             <tbody>

@@ -13,8 +13,8 @@ let year = c_date.getFullYear();
 
     const calendar = `<div class="container">
             <div class="row">
-                <div class="col-sm-6 col-12 d-flex p-0">
-                    <div class="card border-0 mt-5 flex-fill">
+                <div class="col-xl-6 col-12 d-flex p-0">
+                    <div class="card border-0 mt-1 flex-fill">
                         <div class="card-header d-flex justify-content-between p-0">
                             <span class="prevMonth p-15-25">&#10096;</span>
                             <span class="p-15-25"><strong id="s_m"></strong></span>
@@ -37,8 +37,8 @@ let year = c_date.getFullYear();
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-12 d-flex">
-                    <div class="card border-0 mt-5 flex-fill d-none" id="event">
+                <div class="col-xl-6 col-12 d-flex">
+                    <div class="card border-0 mt-1 flex-fill d-none" id="event">
                         <div class="card-header py-3 text-center">
                             Uber
                             <button type="button" class="close hide">
